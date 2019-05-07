@@ -1,0 +1,29 @@
+body {
+    background-image: url("http://sfwallpaper.com/images/pixel-background-3.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    margin-bottom: 50px;
+  }
+
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 30px;
+    width: 100%;
+    line-height: 60px;
+    background-color: rgba(169, 169, 169, 0.6);
+    text-align: left;
+ }
+ #footer-container-text{
+    color: white;
+    line-height: 30px;
+    margin-left: 20px;
+  }
+
+  .card {
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+}
