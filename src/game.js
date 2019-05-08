@@ -3,17 +3,20 @@ class Game {
       this.id = data.id;
       this.title = data.title;
       this.content = data.content;
+      this.image_url = data.image_url;
+      this.rating = data.rating;
+      this.downloads = data.downloads;
       Game.all.push(this);
     }
    
     renderListItem() {
       return `
-      <li class="card col-md-3 mt-4 mr-2 border border-dark rounded">
-      <img class="card-img-top border border-dark rounded mt-2" src="https://i.ytimg.com/vi/GWNxfarEo3o/maxresdefault.jpg" alt="Card image cap">
+      <li class="card col-md-3 mt-4 mr-1 border border-dark rounded">
+      <img class="card-img-top border border-dark rounded mt-2" src="${this.image_url}" alt="Card image cap">
         <h3>${this.title}</h3>
         <p>${this.content}</p>
-        <p>Rating: </p>
-        <p>Downloads: </p>
+        <p>Rating: ${this.rating}</p>
+        <p>Downloads: ${this.downloads}</p>
         <button data-id=${this.id} class="mb-2">edit</button>
       </li>`;
     }
