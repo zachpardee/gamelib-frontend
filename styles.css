@@ -27,3 +27,6 @@ body {
     float: none; /* Added */
     margin-bottom: 10px; /* Added */
 }
+#games-list{
+  padding-right: -40px;
+}

@@ -11,13 +11,13 @@ class Game {
    
     renderListItem() {
       return `
-      <li class="card col-md-3 mt-4 mr-1 border border-dark rounded">
+      <li class="card col-md-3 m-4 border border-dark rounded">
       <img class="card-img-top border border-dark rounded mt-2" src="${this.image_url}" alt="Card image cap">
         <h3>${this.title}</h3>
         <p>${this.content}</p>
         <p>Rating: ${this.rating}</p>
         <p>Downloads: ${this.downloads}</p>
-        <button data-id=${this.id} class="mb-2">edit</button>
+        <button data-id=${this.id} class="mt-auto mb-2">edit</button>
       </li>`;
     }
 
