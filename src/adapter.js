@@ -14,9 +14,22 @@ class Adapter {
     updateGame(id, body) {
       return this.patch(`${this.baseUrl}/games/${id}`, body);
     }
+    
+    createGame(body) {
+      return this.post(`${this.baseUrl}games`, body);
+    }
    
     get(url) {
       return fetch(url).then(res => res.json());
+    }
+
+    post(url, body) {
+      return fetch(url, {
+        method: 'POST',
+        headers: this.headers,
+        body: JSON.stringify(body),
+      })
+      .then(res => res.json());
     }
    
     patch(url, body) {
