@@ -28,7 +28,7 @@ class Game {
 
     renderUpdateForm() {
         return `
-        <div class="card col-md-3 mt-4 mr-2 mb-5 border border-dark rounded">
+        <div id="update-card"class="card col-md-3 mt-4 mr-2 mb-5 border border-dark rounded">
         <form data-id=${this.id}>
           <label>Title</label>
           <p>
@@ -58,7 +58,7 @@ class Game {
 
       static renderCreateForm() {
         return `
-        <div class="card col-md-3 mt-4 mr-2 mb-5 border border-dark rounded">
+        <div id="new-form" class="card col-md-3 mt-4 mr-2 mb-5 border border-dark rounded">
         <form>
           <label>Title</label>
           <p>

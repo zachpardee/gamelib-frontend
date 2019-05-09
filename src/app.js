@@ -45,6 +45,7 @@ class App {
         game.update(updatedGame);
         this.addGames();
       });
+      document.querySelector("#update-card").remove();
 
     }
 
@@ -60,7 +61,7 @@ class App {
       this.adapter.createGame(bodyJSON).then(createdGame => {
         //Create new card here
       });
-
+      document.querySelector("#new-form").remove();
     }
    
     handleEditClick(e) {
