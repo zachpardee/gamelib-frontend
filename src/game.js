@@ -17,6 +17,7 @@ class Game {
         <p>${this.content}</p>
         <p>Rating: ${this.rating}</p>
         <p>Downloads: ${this.downloads}</p>
+        <button type="button" class="btn btn-info mt-auto mb-2" data-toggle="button" aria-pressed="false" autocomplete="off">Favorite</button>
         <button id="edit-button" data-id=${this.id} class="mt-auto mb-2">edit</button>
         <button id="delete-button" data-id=${this.id} class="mt-auto mb-2">delete</button>
       </li>`;
@@ -28,8 +29,9 @@ class Game {
 
     renderUpdateForm() {
         return `
-        <div id="update-card"class="card col-md-3 mt-4 mr-2 mb-5 border border-dark rounded">
+        <div id="update-card"class="card col-md-3 border border-dark rounded">
         <form data-id=${this.id}>
+          <h2>Edit Game</h2>
           <label>Title</label>
           <p>
             <input type="text" value="${this.title}" />
@@ -50,7 +52,7 @@ class Game {
           <p>
             <textarea>${this.downloads}</textarea>
           </p>
-          <button type='submit'>Save Game</button>
+          <button type='submit' class="mb-2">Save Game</button>
         </form>
         </div>
       `;
@@ -58,8 +60,10 @@ class Game {
 
       static renderCreateForm() {
         return `
-        <div id="new-form" class="card col-md-3 mt-4 mr-2 mb-5 border border-dark rounded">
-        <form>
+        <div id="new-form" class="card col-md-3 border border-dark rounded">
+        <form id="create-form-id">
+
+          <h2>New Game</h2>
           <label>Title</label>
           <p>
             <input id="title-text" type="text" value="" />
@@ -80,7 +84,7 @@ class Game {
           <p>
             <textarea id="downloads-text"></textarea>
           </p>
-          <button type='submit'>Save New Game</button>
+          <button type='submit' class="mb-2">Save New Game</button>
         </form>
         </div>
       `;
