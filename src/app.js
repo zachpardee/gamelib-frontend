@@ -2,6 +2,7 @@ class App {
     constructor() {
       this.adapter = new Adapter();
       
+      this.handleSearchSubmit = this.handleSearchSubmit.bind(this);
       this.handleEditClick = this.handleEditClick.bind(this);
       this.handleFormSubmit = this.handleFormSubmit.bind(this);
       this.handleNewFormSubmit = this.handleNewFormSubmit.bind(this);
@@ -14,7 +15,7 @@ class App {
       document.querySelector('#update').addEventListener('submit', this.handleFormSubmit);
       document.querySelector('#new-game-button').addEventListener('click', this.handleNewGameClick);
       document.querySelector('#new').addEventListener('submit', this.handleNewFormSubmit);
-
+      document.querySelector('#search-input').addEventListener("input", this.handleSearchSubmit);
     }
 
     createGames(games) {
@@ -29,6 +30,18 @@ class App {
         Game.all.forEach(
           game => (document.querySelector('#games-list').innerHTML += game.renderListItem())
         );
+    }
+
+    handleSearchSubmit(e){
+      e.preventDefault();
+      console.log("igotclicked")
+      let searchInput = document.querySelector("#search-input");
+      document.querySelector('#games-list').innerHTML = '';
+       let filteredList = Game.all.filter(function(g){return g.title.includes(searchInput.value)});
+       console.log(filteredList);
+       filteredList.forEach(
+        game => (document.querySelector('#games-list').innerHTML += game.renderListItem())
+      );
     }
    
     handleFormSubmit(e) {
