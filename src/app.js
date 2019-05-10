@@ -62,6 +62,21 @@ class App {
         //Create new card here
       });
       document.querySelector("#new-form").remove();
+
+      let gameList = document.querySelector("#games-list");
+
+      gameList.innerHTML +=  `
+      <li class="card col-md-3 m-4 border border-dark rounded">
+      <img class="card-img-top border border-dark rounded mt-2" src="${image}" alt="Card image cap">
+      <h3 class="text-center">${title}</h3>
+        <p>${content}</p>
+        <p>Rating: ${rating}</p>
+        <p>Downloads: ${downloads}</p>
+        <button type="button" class="btn btn-info mt-auto mb-2" data-toggle="button" aria-pressed="false" autocomplete="off">Favorite</button>
+        <button id="edit-button" class="mt-auto mb-2">edit</button>
+        <button id="delete-button" class="mt-auto mb-2">delete</button>
+      </li>`;
+
     }
    
     handleEditClick(e) {
